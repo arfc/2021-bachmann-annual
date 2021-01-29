@@ -1,2 +1,21 @@
 \section{Methodology}
 
+This work simulates multiple fuel cycle scenarios using \Cyclus, an 
+agent-based fuel cycle simulator \cite{huff_fundamental_2016}. 
+The agent-based architecture of \Cyclus allows for the simulation to treat
+each facility discretely, including in how they are deployed and 
+decommissioned \cite{huff_fundamental_2016}.
+
+
+
+The first scenario simulated is the current fleet of U.S. reactors. This 
+simulation begins in Jnauary 1965 and lasts through December 2045 (85 
+years in total). Information about individaul reactors was obtained 
+from the 2020 Year-end Reactor Status Report of the \gls{IAEA} \gls{PRIS} 
+database \cite{noauthor_power_1989}. 
+This database provids reactor type, rated power level, start-up, and 
+shutdown dates for each of the commercial reactors in the U.S. Reactors 
+that are still operational are assumed to operate for 60 years past the 
+initial start date. Only reactors with a power level abov 400 MWe were 
+used in the simulation, to remove reactors that are assumed to be research 
+reactors. 
