@@ -3,21 +3,23 @@
 Each fuel cycle scenario is simulated using \Cyclus, an 
 agent-based fuel cycle simulator \cite{huff_fundamental_2016}. 
 The agent-based architecture of \Cyclus allows for the simulation to treat
-each facility discretely, including in how they are deployed and 
+each facility discretely, including how they are deployed and 
 decommissioned \cite{huff_fundamental_2016}. Each of the facility agents 
 deployed in the simulation are from the \Cycamore archetype library. 
 
 The first scenario simulated is the current fleet of U.S. reactors. This 
-simulation begins in January 1965 and lasts through December 2045 (85 
+simulation begins in January 1965 and lasts through December 2050 (85 
 years in total). Information about individaul reactors was obtained 
 from the 2020 Year-end Reactor Status Report of the \gls{IAEA} \gls{PRIS} 
 database \cite{noauthor_power_1989}. 
 This database provides reactor type, rated power level, start-up, and 
-shutdown dates for each of the commercial reactors in the U.S. Reactors 
-that are still operational (as of December 2020) are assumed to operate 
-for 60 years after the 
-initial start date. Only reactors with a power level abov 400 MWe were 
-used in the simulation, to remove reactors that are assumed to be research 
+shutdown dates for each of the commercial reactors in the U.S. reactor
+fleet
+that are still operational (as of December 2020). The reactors are assumed 
+to operate for 60 years after the 
+initial start date if they have not already been shutdown. Only reactors
+with a power level above 400 MWe were 
+used in the simulation to remove reactors that are assumed to be research 
 reactors. Generic reactor core masses were obtained from 
 \cite{todreas_nuclear_2012} and \cite{cacuci_handbook_2010}. 
 
@@ -26,19 +28,19 @@ represent the Cameco Smith Ranch-Highland Mine), a uranium mill (to
 represent White Mesa Uranium Mill), a conversion facility (to represent 
 the Honeywell Uranium Conversion Facility), an enrichment plant (to represent 
 the Portsmouth Gaseous Diffusion Plant), a fuel fabrication facility (to 
-represent the Westinghouse Fuel Fabrication plant), and various waste and 
+represent the Westinghouse Fuel Fabrication Facility), and various waste and 
 spent fuel storange facilities (to represent Yucca Mountain). While there
-are other fuel cycle facilities in the actual US fuel cycle, this 
-modeling of the fuel cycle provides a total of the resources required 
+are other fuel cycle facilities in the actual U.S. fuel cycle, this 
+modeling provides a total of the resources required 
 by each non-reactor step in the nuclear fuel cycle and simplifies the 
-facilities that are not expected to be deployed and decommissioned often 
+facilities that are not expected to be deployed or decommissioned often 
 during the specified time frame. 
 
 Other scenarios simulated include the transition to \gls{HALEU} fuel 
 reactors. These scenarios are based on two models: no growth in demand 
 and an annual 1\% growth in demand. These scenarios will use the same 
 non-reactor facilities that are used in the simulation for the current 
-US fuel cycle. \gls{HALEU} fuel reactors 
+U.S. fuel cycle. \gls{HALEU} fuel reactors 
 considered in this work include the \gls{USNC} \gls{MMR} \textsuperscript{TM}
 \cite{mitchell_usnc_2020} and the X-Energy Xe-100 \textsuperscript{TM} 
 Reactor \cite{harlan_x-energy_2018}\cite{hussain_advances_2018}. Both of 
@@ -47,7 +49,7 @@ to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel pebbles. Table
 \ref{tab:reactor_summary} summarizes the design of these two reactors.
 
 \begin{table}
-    \caption{Reactor design specifications}
+    \caption{Mico-reactor design specifications}
     \label{tab:reactor_summary}
     \begin{tabular}{|p{2.5cm}|p{2.25cm}|p{2.5cm}|}
         \hline
@@ -64,8 +66,8 @@ to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel pebbles. Table
     \end{tabular}
 \end{table}
     
-These two reactors were selected in this analysis because they have a high 
-likelihood of being deployed and open source information available about 
+We selected these two reactors because they have a high 
+likelihood of being deployed and open source information is available about 
 their designs. These reactors will also allow a comparison in the 
 deployment of advanced reactors with a long cycle time and those that 
 utilize online refueling. 
