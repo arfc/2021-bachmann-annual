@@ -1,46 +1,83 @@
 \section{Methodology}
 
+Each fuel cycle scenario is simulated using \Cyclus, an 
+agent-based fuel cycle simulator \cite{huff_fundamental_2016}. 
+The agent-based architecture of \Cyclus allows for the simulation to treat
+each facility discretely, including their deployment and 
+decommissioning \cite{huff_fundamental_2016}. The \Cyclus 
+Additional Modules Repository (the \Cycamore library) provides 
+the archetypes for each of the facility agents deployed in the simulation.
 
-Explain what methods you used to arrive at your results. For example,
-in this work we adopted XKCD's machine learning algorithm. The algorithm is
-popularly known as ``linear algebra'' and ``statistics.''
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.65\columnwidth]{machine_learning}
-	\caption{Graphical representation of XKCD's algorithm.}
-	\label{fig:ML}
-\end{figure}
+The first scenario simulates the current fleet of U.S. reactors. This 
+simulation begins in January 1965 and lasts through December 2050 (85 
+years in total). The  \gls{IAEA} \gls{PRIS} database\cite{noauthor_power_1989},
+from the 2020 
+Year-end Reactor Status Report provided information about each reactor.
+This database provides reactor type, rated power level, start-up, and 
+shutdown dates for each of the commercial reactors in the U.S. reactor 
+fleet
+that are still operational (as of December 2020). All simulations assume 
+the reactors operate for 60 years after their
+initial start date if they have not already been shut down. Only reactors
+with a power level above 400 MWe were 
+used in the simulation to avoid including prototype and research reactors 
+present in the database. Generic reactor core masses were obtained from 
+\cite{todreas_nuclear_2012} and \cite{cacuci_handbook_2010}. 
 
-\subsection{This is a subsection}
+Other fuel cycle facilities in the simulation include a uranium mine (to 
+represent the Cameco Smith Ranch-Highland Mine), a uranium mill (to 
+represent White Mesa Uranium Mill), a conversion facility (to represent 
+the Honeywell Uranium Conversion Facility), an enrichment plant (to represent 
+the Portsmouth Gaseous Diffusion Plant), a fuel fabrication facility (to 
+represent the Westinghouse Fuel Fabrication Facility), and various waste and 
+spent fuel storage and disposal facilities (to represent Yucca Mountain). 
+While there
+are other fuel cycle facilities in the actual U.S. fuel cycle, this 
+modeling provides a total of the resources required 
+by each non-reactor step in the nuclear fuel cycle and simplifies the 
+facilities that are not expected to be deployed or decommissioned often 
+during the specified time frame. 
 
-If you used an equation with ten variables that you need to explain, do it here.
+This work simulated the transition to a future with substantial \gls{HALEU} 
+reactor deployment under two assumptions about growth in nuclear energy 
+demand: one assuming no growth and the other assuming 1\% annual growth.  
+These scenarios used the same  
+non-reactor facilities as in the simulation of the current 
+U.S. fuel cycle. \gls{HALEU} fuel reactors 
+considered in this work include the \gls{USNC} \gls{MMR} \textsuperscript{TM}
+\cite{mitchell_usnc_2020} and the X-Energy Xe-100 \textsuperscript{TM} 
+Reactor \cite{harlan_x-energy_2018}\cite{hussain_advances_2018}. Both of 
+these reactors are designed 
+to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel pebbles. Table 
+\ref{tab:reactor_summary} summarizes the design of these two reactors.
 
-Guidance for equations:
-\begin{itemize}
-	\item All variables should be one letter.
-	\item Use the \texttt{align} environment.
-	\item Use \texttt{intertext\{\}} to add text inbetween lines.
-	\item Variables should not get their own equation numbers.
-	\item Do your best to make the equation a part of a sentence.
-\end{itemize}
+\begin{table}
+    \caption{Mico-reactor design specifications}
+    \label{tab:reactor_summary}
+    \begin{tabular}{p{2.5cm}p{2.25cm}p{2.5cm}}
+        \hline
+        Design Criteria & \gls{USNC}\gls{MMR}\textsuperscript{TM} & 
+            X-Energy Xe-100\textsuperscript{TM} \\\hline
+        Reactor type & Modular HTGR & Modular HTGR \\
+        Power Output (MWth) & 15 & 200 \\
+        Enrichment (\% $^{235}U$) & 13 & 15.5 \\
+        Cycle Length (years) & 20 & online refuel\\
+        Fuel form & \gls{TRISO} compacts & \gls{TRISO} pebbles\\
+        Reactor Lifetime & 20 years & 60 years \\
+        Coolant & He & He \\
+        \hline
+    \end{tabular}
+\end{table}
+    
+We selected these two reactors because they have a high 
+likelihood of being deployed and because published information is 
+available about their designs. Comparing the transitional \gls{HALEU} 
+demands of these reactors will also inform the fuel cycle support 
+implications of deploying reactors with long cycle 
+times versus those utilizing online refueling. 
 
-\begin{align}
- 	P_{pv} &= G_T\tau_{pv}\eta_{ref}A[1-\gamma(T-25)]\\
-\intertext{where}
-	G_T &= I_{DNI}*\cos(\beta+\delta-lat)+I_{DHI}*\frac{180-\beta}{180}\\
-	\delta &= 23.44*\sin\left(\frac{\pi}{180}\frac{360}{365}(N+284)\right)
-	\intertext{where }
-	N &=\mbox{ day of the year}\nonumber\\
-	I_{DNI} &=\mbox{ Direct Normal Irradiance [kW]}\nonumber\\
-	I_{DHI} &=\mbox{ Diffuse Horizontal Irradiance [kW]}\nonumber\\
-	G_T &=\mbox{ total irradiance [kW]}\nonumber\\
-	\eta &=\mbox{ conversion efficiency (0.15)}\nonumber\\
-	\beta &=\mbox{ tilt of the solar panels [$degrees$]}\nonumber\\
-	\delta &=\mbox{ declination of the Earth [$degrees$]}\nonumber\\
-	T &=\mbox{ temperature [$^\circ$C]}\nonumber\\
-	A &=\mbox{ area covered by solar farm [$m^2$]} \nonumber\\
-	\gamma &=\mbox{ temperature coefficient (0.0045)}\nonumber\\
-	\tau &=\mbox{ transmittance of the PV module}\nonumber
-\end{align}
-
-That's one ugly equation \cite{baker_optimal_2018}.
+Each of the transition scenarios will be simulated using a single type of 
+advanced reactor, resulting in four additional fuel cycle scenarios and five 
+scenarios in total. Each of the scenarios will be analyzed using Cymetric
+\cite{scopatz_cymetric_2015} to determine the resource requirements of the 
+scenario. 
