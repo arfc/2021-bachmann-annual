@@ -1,4 +1,4 @@
-manuscript = main
+manuscript = 2021-bachmann-ans-annual
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -file-line-error
 
