@@ -3,24 +3,25 @@
 Each fuel cycle scenario is simulated using \Cyclus, an 
 agent-based fuel cycle simulator \cite{huff_fundamental_2016}. 
 The agent-based architecture of \Cyclus allows for the simulation to treat
-each facility discretely, including how they are deployed and 
-decommissioned \cite{huff_fundamental_2016}. Each of the facility agents 
-deployed in the simulation are from the \Cycamore archetype library. 
+each facility discretely, including their deployment and 
+decommissioning \cite{huff_fundamental_2016}. The \Cyclus 
+Additional Modules Repository (the \Cycamore library) provides 
+the archetypes for each of the facility agents deployed in the simulation.
 
-The first scenario simulated is the current fleet of U.S. reactors. This 
+The first scenario simulates the current fleet of U.S. reactors. This 
 simulation begins in January 1965 and lasts through December 2050 (85 
-years in total). Information about individaul reactors was obtained 
-from the 2020 Year-end Reactor Status Report of the \gls{IAEA} \gls{PRIS} 
-database \cite{noauthor_power_1989}. 
+years in total). The  \gls{IAEA} \gls{PRIS} database\cite{noauthor_power_1989},
+from the 2020 
+Year-end Reactor Status Report provided information about each reactor.
 This database provides reactor type, rated power level, start-up, and 
-shutdown dates for each of the commercial reactors in the U.S. reactor
+shutdown dates for each of the commercial reactors in the U.S. reactor 
 fleet
-that are still operational (as of December 2020). The reactors are assumed 
-to operate for 60 years after the 
-initial start date if they have not already been shutdown. Only reactors
+that are still operational (as of December 2020). All simulations assume 
+the reactors operate for 60 years after their
+initial start date if they have not already been shut down. Only reactors
 with a power level above 400 MWe were 
-used in the simulation to remove reactors that are assumed to be research 
-reactors. Generic reactor core masses were obtained from 
+used in the simulation to avoid including prototype and research reactors 
+present in the database. Generic reactor core masses were obtained from 
 \cite{todreas_nuclear_2012} and \cite{cacuci_handbook_2010}. 
 
 Other fuel cycle facilities in the simulation include a uranium mine (to 
@@ -29,17 +30,19 @@ represent White Mesa Uranium Mill), a conversion facility (to represent
 the Honeywell Uranium Conversion Facility), an enrichment plant (to represent 
 the Portsmouth Gaseous Diffusion Plant), a fuel fabrication facility (to 
 represent the Westinghouse Fuel Fabrication Facility), and various waste and 
-spent fuel storange facilities (to represent Yucca Mountain). While there
+spent fuel storage and disposal facilities (to represent Yucca Mountain). 
+While there
 are other fuel cycle facilities in the actual U.S. fuel cycle, this 
 modeling provides a total of the resources required 
 by each non-reactor step in the nuclear fuel cycle and simplifies the 
 facilities that are not expected to be deployed or decommissioned often 
 during the specified time frame. 
 
-Other scenarios simulated include the transition to \gls{HALEU} fuel 
-reactors. These scenarios are based on two models: no growth in demand 
-and an annual 1\% growth in demand. These scenarios will use the same 
-non-reactor facilities that are used in the simulation for the current 
+This work simulated the transition to a future with substantial \gls{HALEU} 
+reactor deployment under two assumptions about growth in nuclear energy 
+demand: one assuming no growth and the other assuming 1\% annual growth.  
+These scenarios used the same  
+non-reactor facilities as in the simulation of the current 
 U.S. fuel cycle. \gls{HALEU} fuel reactors 
 considered in this work include the \gls{USNC} \gls{MMR} \textsuperscript{TM}
 \cite{mitchell_usnc_2020} and the X-Energy Xe-100 \textsuperscript{TM} 
@@ -51,7 +54,7 @@ to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel pebbles. Table
 \begin{table}
     \caption{Mico-reactor design specifications}
     \label{tab:reactor_summary}
-    \begin{tabular}{|p{2.5cm}|p{2.25cm}|p{2.5cm}|}
+    \begin{tabular}{p{2.5cm}p{2.25cm}p{2.5cm}}
         \hline
         Design Criteria & \gls{USNC}\gls{MMR}\textsuperscript{TM} & 
             X-Energy Xe-100\textsuperscript{TM} \\\hline
@@ -59,7 +62,7 @@ to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel pebbles. Table
         Power Output (MWth) & 15 & 200 \\
         Enrichment (\% $^{235}U$) & 13 & 15.5 \\
         Cycle Length (years) & 20 & online refuel\\
-        Fuel form & \gls{TRISO} & \gls{TRISO} \\
+        Fuel form & \gls{TRISO} compacts & \gls{TRISO} pebbles\\
         Reactor Lifetime & 20 years & 60 years \\
         Coolant & He & He \\
         \hline
@@ -67,13 +70,14 @@ to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel pebbles. Table
 \end{table}
     
 We selected these two reactors because they have a high 
-likelihood of being deployed and open source information is available about 
-their designs. These reactors will also allow a comparison in the 
-deployment of advanced reactors with a long cycle time and those that 
-utilize online refueling. 
+likelihood of being deployed and because published information is 
+available about their designs. Comparing the transitional \gls{HALEU} 
+demands of these reactors will also inform the fuel cycle support 
+implications of deploying reactors with long cycle 
+times versus those utilizing online refueling. 
 
 Each of the transition scenarios will be simulated using a single type of 
-micro-reactor, resulting in four additional fuel cycle scenarios and five 
+advanced reactor, resulting in four additional fuel cycle scenarios and five 
 scenarios in total. Each of the scenarios will be analyzed using Cymetric
 \cite{scopatz_cymetric_2015} to determine the resource requirements of the 
 scenario. 
