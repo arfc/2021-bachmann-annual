@@ -1,7 +1,7 @@
 \section{Results}
 
 The results include the time-dependent resources required 
-for each of the transition scenarios described. This includes 
+for each of the scenarios described. This includes 
 the number of reactors, mass of enriched uranium, and the 
 \gls{SWU} capacity needed to produce the enriched uranium.
 Results presented here include the simulations of the 
@@ -12,8 +12,11 @@ of each type of reactors deployed in each of the simulated
 scenarios. All scenarios deploy the same number of \gls{LWR}s. 
 Each of the transitions utilize a \Cycamore ``GrowthRegion'' 
 to control the deployment of the advanced reactor as needed 
-to meet the specified demand. All of the scenarios deploy the 
-\gls{LWR}s at the same time. For each of the transitions 
+to meet the specified demand, while the \gls{LWR}s are 
+deployed at their specified start date. All of the scenarios 
+have the same deployment schedule for \gls{LWR}s. 5962 
+\gls{MMR} reactors  and 795 Xe-100 reactors are required 
+to meet the specified power demand of 59614 GW. 
 
 
 \begin{figure}[ht]
@@ -26,13 +29,13 @@ to meet the specified demand. All of the scenarios deploy the
 Figure \ref{fig:energy} shows the total energy output from 
 all of the reactors in each scenario. Each of the scenarios
 have very similar energy outputs, until  when the transitions 
-begin to have most of their energy from the advanced reactors.
+begin to rely on the advanced reactors for their energy.
 The energy output in 
 each of the transition scenarios does not match the flat demand 
 starting at 2025 specified by the \Cycamore ``GrowthRegion''. 
 This is due to 
-the use of mutual transactions in the dynamic resource exchange
-(DRE) \cite{gidden_methodology_2016}, which requires that each 
+the use of mutual transactions in the \gls{DRE} 
+\cite{gidden_methodology_2016}, which requires that each 
 material request filled must be filled in full. A cap had to be 
 placed on the inventory of feed material (UF$_6$ commodity) that 
 the enrichment facility could store. Further work is required 
@@ -40,7 +43,9 @@ to determine the cap on feed material inventory to better meet
 the intended energy demand of the transitions. The transition to 
 the Xe-100 reactor better matches the energy demand than the 
 transition to the \gls{MMR} reactor, most likely because of the 
-longer lifetime of the Xe-100 reactor. 
+longer lifetime of the Xe-100 reactor. The \gls{MMR} transition 
+scenario does not ever reach the required power level of 
+the scecnario. 
 
 \begin{figure}[ht]
     \centering
@@ -52,11 +57,14 @@ longer lifetime of the Xe-100 reactor.
 Figure \ref{fig:enriched_u} shows the amount of \gls{HALEU} 
 required by the advanced reactors in the transition scenarios. 
 Both scenarios show a spike in \gls{HALEU} demand in 1975, which 
-an artifact of the DRE, and not due to the reactors requiring the 
+an artifact of the \gls{DRE}, and not due to the reactors requiring the 
 fuel. Looking at the demand of \gls{HALEU} after 2049, the 
 \gls{MMR} transition requires 4556-6409 kg more than the 
 Xe-100 transition, except for a single time step in 2084 when 
-the Xe-100 transition requires almost 69,000 kg more. 
+the Xe-100 transition requires almost 69,000 kg more. This 
+sudden spike in enriched uranium demand is due to the 
+deployment of more Xe-100 reactors, after the initial set 
+of reactors reach their lifetime. 
 
 \begin{figure}[ht]
     \centering

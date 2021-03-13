@@ -8,22 +8,22 @@ decommissioning \cite{huff_fundamental_2016}. The \Cyclus
 Additional Modules Repository (the \Cycamore library) provides 
 the archetypes for each of the facility agents deployed in the simulation.
 
-The first scenario simulates the current fleet of U.S. reactors. This 
+The first scenario simulates just the current fleet of U.S. reactors. This 
 simulation begins in January 1965 and lasts through December 2090 (125 
 years in total) with one month timesteps. The \gls{IAEA} \gls{PRIS} 
 database \cite{noauthor_power_1989} 2020 
 Year-end Reactor Status Report provided information about each reactor.
 This database provides reactor type, rated power level, start-up, and 
 shutdown dates for each of the commercial reactors in the U.S. reactor 
-fleet (as of December 2020). All simulations assume 
-the reactors operate for 60 years after their
+fleet (as of December 2020). The simulations assume 
+the \gls{LWR}s operate for 60 years after their
 initial start date if they have not already been shut down. Only reactors
 with a power level above 400 MWe were 
 used in the simulation to avoid including prototype and research reactors 
 present in the database. Generic reactor core masses were obtained from 
 \cite{todreas_nuclear_2012} and \cite{cacuci_handbook_2010}. 
 
-Other fuel cycle facilities in the simulation include a uranium mine (to 
+Other fuel cycle facilities deployed include a uranium mine (to 
 represent the Cameco Smith Ranch-Highland Mine), a uranium mill (to 
 represent White Mesa Uranium Mill), a conversion facility (to represent 
 the Honeywell Uranium Conversion Facility), an enrichment plant (to represent 
@@ -35,10 +35,15 @@ are other fuel cycle facilities in the actual U.S. fuel cycle, this
 modeling provides a concise total of the resources required 
 by each non-reactor step in the nuclear fuel cycle and simplifies the 
 facilities that are not expected to be deployed or decommissioned often 
-during the specified time frame. Figure \ref{fig:fuel_cycle} shows 
-the facilities and material flow in the simulated fuel cycle. The simulated 
-fuel cycle contains multiple reactor agents, one agent for each reactor, 
-which have been condensed to one facility in the diagram.
+during the specified time frame. Most of these facilities do not have 
+any limits on their production throughputs, except the fuel fabrication 
+plant which has a limit of storing 1 million kg of enriched uranium. 
+Figure \ref{fig:fuel_cycle} shows 
+the facilities and material flow in the simulated fuel cycles. There are 
+multiple reactor agents in each of the scenarios, one agent for each reactor, 
+which have been condensed to one facility in the diagram. the facilities
+red are used only in the transition scenarios to provide a spearate 
+material stream. 
 
 
 \begin{figure}[ht]
@@ -79,7 +84,8 @@ which have been condensed to one facility in the diagram.
     \label{fig:fuel_cycle}
 \end{figure}
 
-This work simulated the transition to a future with substantial \gls{HALEU} 
+Other fuel cycle scenarios simulated include the transition to a future with 
+substantial \gls{HALEU} 
 reactor deployment under two assumptions about growth in nuclear energy 
 demand: one assuming no growth and the other assuming 1\% annual growth. 
 The transition to the new reactor type starts in 2025. 
@@ -91,7 +97,8 @@ considered in this work include the \gls{USNC} \gls{MMR} \textsuperscript{TM}
 Reactor \cite{harlan_x-energy_2018}\cite{hussain_advances_2018}. Both of 
 these reactors are designed 
 to use \gls{HALEU} fuel in the form of \gls{TRISO} fuel particles. Table 
-\ref{tab:reactor_summary} summarizes the design of these two reactors.
+\ref{tab:reactor_summary} summarizes the key design characteristics of these 
+two reactors.
 
 \begin{table}[ht]
     \caption{Mico-reactor design specifications}
