@@ -8,7 +8,7 @@ decommissioning \cite{huff_fundamental_2016}. The \Cyclus
 Additional Modules Repository (the \Cycamore library) provides 
 the archetypes for each of the facility agents deployed in the simulation.
 
-The first scenario simulates just the current fleet of U.S. reactors. This 
+The first scenario only simulates the current fleet of U.S. reactors. This 
 simulation begins in January 1965 and lasts through December 2090 (125 
 years in total) with one month timesteps. The \gls{IAEA} \gls{PRIS} 
 database \cite{noauthor_power_1989} 2020 
@@ -23,7 +23,7 @@ used in the simulation to avoid including prototype and research reactors
 present in the database. Generic reactor core masses were obtained from 
 \cite{todreas_nuclear_2012} and \cite{cacuci_handbook_2010}. 
 
-Other fuel cycle facilities deployed include a uranium mine (to 
+Other fuel cycle facilities deployed include: a uranium mine (to 
 represent the Cameco Smith Ranch-Highland Mine), a uranium mill (to 
 represent White Mesa Uranium Mill), a conversion facility (to represent 
 the Honeywell Uranium Conversion Facility), an enrichment plant (to represent 
@@ -37,12 +37,12 @@ by each non-reactor step in the nuclear fuel cycle and simplifies the
 facilities that are not expected to be deployed or decommissioned often 
 during the specified time frame. Most of these facilities do not have 
 any limits on their production throughputs, except the fuel fabrication 
-plant which has a limit of storing 1 million kg of enriched uranium. 
+plant, which has a limit of storing 1 million kg of enriched uranium. 
 Figure \ref{fig:fuel_cycle} shows 
 the facilities and material flow in the simulated fuel cycles. There are 
 multiple reactor agents in each of the scenarios, one agent for each reactor, 
-which have been condensed to one facility in the diagram. the facilities
-red are used only in the transition scenarios to provide a spearate 
+which are condensed to one facility in the diagram. The facilities shown in
+red are used only in the transition scenarios to provide a separate 
 material stream. 
 
 
@@ -80,7 +80,7 @@ material stream.
 
         \end{tikzpicture}
     \caption{Fuel cycle facilities and material flow between facilities. Facilities in 
-    red are added in for the transition scenarios.}
+    red are deployed in the transition scenarios.}
     \label{fig:fuel_cycle}
 \end{figure}
 
