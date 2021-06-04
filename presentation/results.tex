@@ -8,14 +8,16 @@
                   deployed starting in July 2038
             \item In the 1\% growth scenarios (Scenarios 4, 5) the advanced reactors are 
                   deployed starting in Auggust 2036
-            \item Scenario 2-5 require a maximum of 5962, 50, 11474, and 51 reactors
+            \item Scenario 2-5 require a maximum of 5962, 50, 11474, and 51 reactors, respectively
         \end{itemize}
 
         \column[t]{5cm}
+        \vspace{-1cm}
         \begin{figure}
             \centering 
             \includegraphics[scale=0.3]{figures/rxdeployment_scenarios_all.png}
-            \caption{Energy produced per year by all reactors in each scenario.}
+            \caption{Reactor deployment schedule for \glspl{LWR} and 
+            advanced reactors.}
             \label{fig:rx_deployment}
         \end{figure}
     \end{columns}
@@ -26,40 +28,55 @@
     \begin{columns}
         \column[t]{5cm}
         \begin{itemize}
+            \item Scenarios 2, 3 do not meet demand between 2038- 
             \item Small variations from demand in Scenarios 2 and 4 when 
-                  reactors are deployed
+                  new reactors are deployed
         \end{itemize}
 
         \column[t]{5cm}
+        \vspace{-1cm}
         \begin{figure}
             \centering 
-            \includegraphics[scale=0.3]{figures/energy_scenarios_all.png}
-            \caption{Energy produced per year by all reactors in each scenario.}
+            \begin{subfigure}
+                \centering
+                \includegraphics[scale=0.3]{figures/energy_scenarios_123.png}
+                \label{fig:energy_123}
+            \end{subfigure}
+            \vspace{-0.8cm}
+            \begin{subfigure}
+                \centering
+                \includegraphics[scale=0.3]{figures/energy_scenarios_145.png}
+                \label{fig:energy_145}
+            \end{subfigure}
+            \caption{Energy produced per year by all reactors in Scenarios 1-3 (top)
+            and Scenarios 1, 4, 5 (bottom)}
             \label{fig:energy}
         \end{figure}
     \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Fresh Fuel Transactions}
+    \frametitle{Uranium Mass Supply}
     \begin{columns}
         \column[t]{5cm}
 
         \column[t]{5cm}
-        \vspace{-0.8cm}
+        \vspace{-1cm}
         \begin{figure}
             \centering 
-            \includegraphics[scale=0.3]{figures/fuelsupply_scenarios_all.png}
-            \caption{Energy produced per year by all reactors in each scenario.}
-            \label{fig:fuel_allRX}
-        \end{figure}
-        \vspace{-0.8cm}
-        \begin{figure}
-            \centering 
-            \includegraphics[scale=0.3]{figures/advancedRX_fuelsupply_scenarios_2-5.png}
-            \vspace{0cm}
-            \caption{Energy produced per year by all reactors in each scenario.}
-            \label{fig:fuel_advancedRX}
+            \begin{subfigure}
+                \centering
+                \includegraphics[scale=0.3]{figures/fuelsupply_scenarios_all.png}
+                \label{fig:fuel_all}
+            \end{subfigure}
+            \begin{subfigure}
+                \centering
+                \includegraphics[scale=0.3]{figures/advancedRX_fuelsupply_scenarios_2-5.png}
+                \label{fig:fuel_advancedRX}
+            \end{subfigure}
+            \caption{Uranium mass sent to all reactors (top)
+            and only advanced reactors (bottom)}
+            \label{fig:fuel}
         \end{figure}
     \end{columns}
     
@@ -72,10 +89,22 @@
         \column[t]{5cm}
 
         \column[t]{5cm}
+        \vspace{-1cm}
         \begin{figure}
             \centering 
-            \includegraphics[scale=0.3]{figures/haleuSWU_scenarios_all.png}
-            \caption{\gls{SWU} required to produce fuel for advanced reactors.}
+            \begin{subfigure}
+                \centering
+                \includegraphics[scale=0.3]{figures/totalswu_scenarios_all.png}
+                \label{fig:swu_all}
+            \end{subfigure}
+            \vspace{-0.6cm}
+            \begin{subfigure}
+                \centering
+                \includegraphics[scale=0.3]{figures/haleuSWU_scenarios_all.png}
+                \label{fig:swu_haleu}
+            \end{subfigure}
+            \caption{\gls{SWU} required to produce enriched uranium for all 
+            reactors (top) and only advanced reactors (bottom)}
             \label{fig:swu}
         \end{figure}
     \end{columns}
