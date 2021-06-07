@@ -4,10 +4,10 @@
         \column[t]{5cm}
         \begin{itemize}
             \item The last \gls{LWR} is decommissied in 2076
-            \item In the no growth scenarios (Scenarios 2, 3) the advanced reactors are 
-                  deployed starting in July 2038
-            \item In the 1\% growth scenarios (Scenarios 4, 5) the advanced reactors are 
-                  deployed starting in Auggust 2036
+            \item In the no growth scenarios (Scenarios 2 and 3) the advanced reactors are 
+                  deployed starting in June 2038
+            \item In the 1\% growth scenarios (Scenarios 4 and 5) the advanced reactors are 
+                  deployed starting in July 2036
             \item Scenario 2-5 require a maximum of 5962, 50, 11474, and 51 reactors, respectively
         \end{itemize}
 
@@ -28,9 +28,12 @@
     \begin{columns}
         \column[t]{5cm}
         \begin{itemize}
-            \item Scenarios 2, 3 do not meet demand between 2038- 
-            \item Small variations from demand in Scenarios 2 and 4 when 
-                  new reactors are deployed
+            \item Energy produced by \glspl{LWR} in Scenario 1 in 2025 is 59.613 GWe-y
+            \item Scenarios 2 and 3 do not meet demand between 2038-2053
+            \item Scenario 4 does not meet demand between 2035-2054
+            \item Scenario 5 does not meet demand between 3035-2048
+            \item Noticable deviations from demand in Scenarios 2, 4 when new 
+                  reactors are deployed
         \end{itemize}
 
         \column[t]{5cm}
@@ -59,9 +62,18 @@
     \frametitle{Uranium Mass Supply}
     \begin{columns}
         \column[t]{5cm}
-
+            \begin{itemize}
+                \item All scenarios have the same uranium demands until 
+                      advanced reactors are deployed
+                \item Large peaks in Scenarios 2 and 4 correspond to the 
+                      deployment of new reactors
+                \item Less variation with time in the required \gls{SWU} capacity 
+                      for Scenarios 3 and 5 than Scenarios 2 and 4
+                \item There is a 6 month delay in when advanced reactors 
+                      are deployed and fueled in Scenario 4
+            \end{itemize}
         \column[t]{5cm}
-        \vspace{-1cm}
+        \vspace{-0.8cm}
         \begin{figure}
             \centering 
             \begin{subfigure}
@@ -87,20 +99,27 @@
     \frametitle{\gls{SWU} Requirements}
     \begin{columns}
         \column[t]{5cm}
-
+            \begin{itemize}
+                \item Follows similar pattern to uranium mass 
+                \item Scenarios 2 and 4 require the most \gls{SWU} 
+                      because of the large mass of urnaium, despite a 
+                      lower enrichment level for the advanced reactors 
+                      Scenarios 3 and 5
+                
+            \end{itemize}
         \column[t]{5cm}
         \vspace{-1cm}
         \begin{figure}
             \centering 
             \begin{subfigure}
                 \centering
-                \includegraphics[scale=0.3]{figures/totalswu_scenarios_all.png}
+                \includegraphics[height=0.35\textheight]{figures/totalswu_scenarios_all.png}
                 \label{fig:swu_all}
             \end{subfigure}
-            \vspace{-0.6cm}
+            \vspace{-0.5cm}
             \begin{subfigure}
                 \centering
-                \includegraphics[scale=0.3]{figures/haleuSWU_scenarios_all.png}
+                \includegraphics[height=0.35\textheight]{figures/haleuSWU_scenarios_all.png}
                 \label{fig:swu_haleu}
             \end{subfigure}
             \caption{\gls{SWU} required to produce enriched uranium for all 
