@@ -14,8 +14,9 @@
     \column[t]{5cm}
     \begingroup
         \renewcommand{\arraystretch}{1.5} % Default value: 1
+        \vspace{-0.8cm}
         \begin{table}[t!]
-            \tiny
+            \small
             \caption{Advanced reactor design specifications}
             \label{tab:reactor_summary}
             \begin{tabular}{ p{1.5cm} p{1.5cm} p{1.25cm}}
@@ -29,7 +30,6 @@
                 Cycle Length (years) & 20 & Online Refuel\\
                 Fuel Form & TRISO Compacts & TRISO Pebbles\\
                 Reactor Lifetime & 20 years & 60 years \\
-                Coolant & He & He \\
                 \hline
             \end{tabular}
         \end{table}   
@@ -48,6 +48,7 @@
         \item \glspl{LWR} are assumed to operate for 60 years, unless they 
               were decommissioned by December 2020
         \item Transitions begin in 2025
+        \item Timestep of one month
     \end{itemize}
 
     \column[t]{6cm}
